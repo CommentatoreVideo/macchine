@@ -1,4 +1,4 @@
-import Riga from "./Riga";
+import Riga from "./Riga.js";
 function Aggiungi(props) {
   let premuto=async function() {
     let [righe,marca,modello,colore,anno,targa]=props.variabili;
@@ -21,7 +21,7 @@ function Aggiungi(props) {
     props.setVari[0]([...righe,riga]);
   }
   return(
-    <button id="btnAggiungi" class="btn btn-success" onClick={premuto}>Aggiungi</button>
+    <button id="btnAggiungi" className="btn btn-success" onClick={premuto}>Aggiungi</button>
   )
 }
 

@@ -1,7 +1,7 @@
 function Riga(props) {
   let celle=[]
   if(props.children)
-    celle=props.children.map(v=>(<td>{v}</td>));
+    celle=props.children.map((v,i)=>(<td key={i}>{v}</td>));
   let premuto=async function(e) {
     let conferma=window.confirm("Sei sicuro?");
     let id=e.target.parentNode.parentNode.id;
@@ -14,7 +14,7 @@ function Riga(props) {
   return (
     <tr id={props.id}>
       {celle}
-      <td><button class="btn btn-danger" onClick={premuto}>Elimina</button></td>
+      <td><button className="btn btn-danger" onClick={premuto}>Elimina</button></td>
     </tr>
   )
 }

@@ -1,6 +1,6 @@
 function Aggiorna(props) {
   let premuto=async function() {
-    let [n,marca,modello,colore,anno,targa]=props.variabili;
+    let [,marca,modello,colore,anno,targa]=props.variabili;
     let righe=document.getElementById("tabella").children[1].children;
     for(let riga of righe) {
       if(riga.children[4].innerText!==targa)
@@ -40,7 +40,7 @@ function Aggiorna(props) {
     alert("Macchina non trovata");
   }
   return (
-    <button id="btnAggiorna" class="btn btn-primary" onClick={premuto}>Aggiorna</button>
+    <button id="btnAggiorna" className="btn btn-primary" onClick={premuto}>Aggiorna</button>
   )
 }
 

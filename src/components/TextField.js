@@ -4,9 +4,9 @@ function TextField(props) {
     props.set(e.target.value);
   }
   return (
-    <div class="form-group">
-      <label for={props.id}>{props.label}</label>
-      <input type="text" value={props.var} class="form-control" id={props.id} onInput={cambiato} placeholder={props.placeholder}/>
+    <div className="form-group">
+      <label htmlFor={props.id}>{props.label}</label>
+      <input type="text" value={props.var} className="form-control" id={props.id} onInput={cambiato} placeholder={props.placeholder}/>
     </div>
   )
 }

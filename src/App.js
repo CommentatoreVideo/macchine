@@ -2,7 +2,7 @@ import TextField from "./components/TextField";
 import Aggiungi from "./components/Aggiungi";
 import Aggiorna from "./components/Aggiorna";
 import {useState, useEffect} from "react";
-import Riga from "./components/Riga";
+import Riga from "./components/Riga.js";
 import firebase from 'firebase/app';
 import "firebase/firestore";
 require("dotenv").config();
@@ -20,8 +20,7 @@ firebase.initializeApp(firebaseConfig);
 process.env.CI=false;
 
 function App() {
-  //eslint-ignore-next-line
-  let [macchine,setMacchine]=useState([]);
+  let [,setMacchine]=useState([]);
   let [loading, setLoading]=useState([]);
   let [righe,setRighe]=useState([]);
   let [marca,setMarca]=useState("");
@@ -50,7 +49,7 @@ function App() {
       setMacchine(macchine);
       setRighe(macchine.map(m=>{
         let {marca,modello,colore,anno,targa, id}=m;
-        return (<Riga id={id} firebase={firebase}>{[marca,modello,colore,anno,targa]}</Riga>)
+        return (<Riga key={id} id={id} firebase={firebase}>{[marca,modello,colore,anno,targa]}</Riga>)
       }));
       
       setLoading(false);
@@ -75,7 +74,7 @@ function App() {
     <Aggiungi variabili={variabili} setVari={setVari} firebase={firebase}></Aggiungi>
     <Aggiorna variabili={variabili} setVari={setVari} firebase={firebase}></Aggiorna>
     
-    <table class="table" id="tabella">
+    <table className="table" id="tabella">
       <thead>
         <tr>
           <th>Marca</th>
