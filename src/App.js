@@ -17,8 +17,10 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+process.env.CI=false;
 
 function App() {
+  //eslint-ignore-next-line
   let [macchine,setMacchine]=useState([]);
   let [loading, setLoading]=useState([]);
   let [righe,setRighe]=useState([]);
